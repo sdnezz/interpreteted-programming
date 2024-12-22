@@ -1,20 +1,20 @@
 from django.contrib import admin
-from .models import Guest, Room, Booking
+from .models import Dancer, Group, Schedule
 
-@admin.register(Guest)
-class GuestAdmin(admin.ModelAdmin):
-    list_display = ('first_name', 'last_name', 'phone_number', 'email', 'passport_number')
-    search_fields = ('first_name', 'last_name', 'passport_number')
-    list_filter = ('first_name', 'last_name')
+@admin.register(Dancer)
+class DancerAdmin(admin.ModelAdmin):
+    list_display = ('first_name', 'last_name', 'age', 'phone_number', 'email', 'unique_id')
+    search_fields = ('first_name', 'last_name', 'unique_id')
+    list_filter = ('age',)
 
-@admin.register(Room)
-class RoomAdmin(admin.ModelAdmin):
-    list_display = ('room_number', 'room_type', 'price_per_night', 'status')
-    search_fields = ('room_number', 'room_type')
-    list_filter = ('room_type', 'status')
+@admin.register(Group)
+class GroupAdmin(admin.ModelAdmin):
+    list_display = ('group_name', 'dance_style', 'status')
+    search_fields = ('group_name', 'dance_style')
+    list_filter = ('dance_style', 'status')
 
-@admin.register(Booking)
-class BookingAdmin(admin.ModelAdmin):
-    list_display = ('guest', 'room', 'start_date', 'end_date')
-    search_fields = ('guest__first_name', 'guest__last_name', 'room__room_number')
-    list_filter = ('start_date', 'end_date')
+@admin.register(Schedule)
+class ScheduleAdmin(admin.ModelAdmin):
+    list_display = ('dancer', 'group', 'session_date', 'start_time', 'end_time')
+    search_fields = ('dancer__first_name', 'dancer__last_name', 'group__group_name')
+    list_filter = ('session_date',)

@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h2>Список групп</h2>
+<ul>
+    {% for group in groups %}
+        <li>
+            <form method="post" action="{% url 'edit_group' group.id %}">
+                {% csrf_token %}
+                Название группы: <input type="text" name="group_name" value="{{ group.group_name }}">
+                Стиль танца: <input type="text" name="dance_style" value="{{ group.dance_style }}">
+                Статус:
+                <select name="status">
+                    <option value="active" {% if group.status == "active" %}selected{% endif %}>Активна</option>
+                    <option value="inactive" {% if group.status == "inactive" %}selected{% endif %}>Неактивна</option>
+                </select>
+                <button type="submit">Сохранить</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'home' %}">Назад</a>

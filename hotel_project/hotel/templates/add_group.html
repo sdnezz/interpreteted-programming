@@ -1,0 +1,17 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h2>Добавить группу</h2>
+<form method="post">
+    {% csrf_token %}
+    <label>Название группы:</label><br>
+    <input type="text" name="group_name" required><br>
+    <label>Стиль танца:</label><br>
+    <input type="text" name="dance_style"><br>
+    <label>Статус:</label><br>
+    <select name="status">
+        <option value="active">Активна</option>
+        <option value="inactive">Неактивна</option>
+    </select><br><br>
+    <button type="submit">Добавить</button>
+</form>
+<a href="{% url 'home' %}">Назад</a>

@@ -1,41 +1,48 @@
-<?xml version="1.0" ?>
-<hotel>
-  <guests>
-    <guest id="1">
-      <first_name>Sanya</first_name>
-      <last_name>Snichkov</last_name>
-      <phone_number>+123456789</phone_number>
-      <email>sanya@example.com</email>
-      <passport_number>AA1234567</passport_number>
-    </guest>
-    <guest id="2">
-      <first_name>Oleg</first_name>
-      <last_name>Olegov</last_name>
-      <phone_number>+55555555</phone_number>
-      <email>oleg@example.com</email>
-      <passport_number>BB9876543</passport_number>
-    </guest>
-  </guests>
-  <rooms>
-    <room id="1">
-      <room_number>101</room_number>
-      <room_type>Люкс</room_type>
-      <price_per_night>5000.00</price_per_night>
-      <status>свободен</status>
-    </room>
-    <room id="2">
-      <room_number>102</room_number>
-      <room_type>Обычный</room_type>
-      <price_per_night>3000.00</price_per_night>
-      <status>занят</status>
-    </room>
-  </rooms>
-  <bookings>
-    <booking id="1">
-      <guest_id>1</guest_id>
-      <room_id>2</room_id>
-      <start_date>2024-12-01</start_date>
-      <end_date>2024-12-05</end_date>
-    </booking>
-  </bookings>
-</hotel>
+<dance_school>
+    <dancers>
+        <dancer id="1">
+            <first_name>Иван</first_name>
+            <last_name>Иванов</last_name>
+            <age>25</age>
+            <phone_number>+79991234567</phone_number>
+            <email>ivan.ivanov@example.com</email>
+            <unique_id>D001</unique_id>
+        </dancer>
+        <dancer id="2">
+            <first_name>Анна</first_name>
+            <last_name>Смирнова</last_name>
+            <age>22</age>
+            <phone_number>+79991234568</phone_number>
+            <email>anna.smirnova@example.com</email>
+            <unique_id>D002</unique_id>
+        </dancer>
+    </dancers>
+    <groups>
+        <group id="1">
+            <group_name>Танцы Латина</group_name>
+            <dance_style>Латиноамериканские</dance_style>
+            <status>active</status>
+        </group>
+        <group id="2">
+            <group_name>Танцы Хип-Хоп</group_name>
+            <dance_style>Уличный стиль</dance_style>
+            <status>active</status>
+        </group>
+    </groups>
+    <schedules>
+        <schedule id="1">
+            <dancer_id>1</dancer_id>
+            <group_id>1</group_id>
+            <session_date>2024-12-25</session_date>
+            <start_time>18:00</start_time>
+            <end_time>19:30</end_time>
+        </schedule>
+        <schedule id="2">
+            <dancer_id>2</dancer_id>
+            <group_id>2</group_id>
+            <session_date>2024-12-26</session_date>
+            <start_time>19:00</start_time>
+            <end_time>20:30</end_time>
+        </schedule>
+    </schedules>
+</dance_school>

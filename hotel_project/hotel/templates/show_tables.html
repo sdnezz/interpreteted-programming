@@ -8,24 +8,25 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Гости</h1>
+    <h1>Танцоры</h1>
     <ul>
-        {% for guest in guests %}
-        <li>{{ guest.first_name }} {{ guest.last_name }}</li>
+        {% for dancer in dancers %}
+        <li>{{ dancer.first_name }} {{ dancer.last_name }} (Возраст: {{ dancer.age }})</li>
         {% endfor %}
     </ul>
 
-    <h1>Номера</h1>
+    <h1>Группы</h1>
     <ul>
-        {% for room in rooms %}
-        <li>Номер: {{ room.room_number }}, Тип: {{ room.room_type }}</li>
+        {% for group in groups %}
+        <li>Группа: {{ group.group_name }}, Стиль: {{ group.dance_style }}</li>
         {% endfor %}
     </ul>
 
-    <h1>Бронирования</h1>
+    <h1>Расписание</h1>
     <ul>
-        {% for booking in bookings %}
-        <li>Гость: {{ booking.guest.first_name }}, Номер: {{ booking.room.room_number }}</li>
+        {% for schedule in schedules %}
+        <li>Танцор: {{ schedule.dancer.first_name }} {{ schedule.dancer.last_name }}, Группа: {{ schedule.group.group_name }},
+            Дата: {{ schedule.session_date }}, Время: {{ schedule.start_time }} - {{ schedule.end_time }}</li>
         {% endfor %}
     </ul>
 

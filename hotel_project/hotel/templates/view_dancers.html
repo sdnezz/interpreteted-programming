@@ -1,0 +1,20 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h2>Список танцоров</h2>
+<ul>
+    {% for dancer in dancers %}
+        <li>
+            <form method="post" action="{% url 'edit_dancer' dancer.id %}">
+                {% csrf_token %}
+                Имя: <input type="text" name="first_name" value="{{ dancer.first_name }}">
+                Фамилия: <input type="text" name="last_name" value="{{ dancer.last_name }}">
+                Возраст: <input type="number" name="age" value="{{ dancer.age }}">
+                Телефон: <input type="text" name="phone_number" value="{{ dancer.phone_number }}">
+                Почта: <input type="email" name="email" value="{{ dancer.email }}">
+                Уникальный ID: <input type="text" name="unique_id" value="{{ dancer.unique_id }}">
+                <button type="submit">Сохранить</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'home' %}">Назад</a>

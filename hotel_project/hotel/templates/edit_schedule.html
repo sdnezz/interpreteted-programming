@@ -1,0 +1,27 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h2>Редактировать расписание</h2>
+<form method="post">
+    {% csrf_token %}
+    Танцор:
+    <select name="dancer_id">
+        {% for dancer in dancers %}
+            <option value="{{ dancer.id }}" {% if dancer.id == schedule.dancer.id %}selected{% endif %}>
+                {{ dancer.first_name }} {{ dancer.last_name }}
+            </option>
+        {% endfor %}
+    </select><br>
+    Группа:
+    <select name="group_id">
+        {% for group in groups %}
+            <option value="{{ group.id }}" {% if group.id == schedule.group.id %}selected{% endif %}>
+                {{ group.group_name }} ({{ group.dance_style }})
+            </option>
+        {% endfor %}
+    </select><br>
+    Дата занятия: <input type="date" name="session_date" value="{{ schedule.session_date }}"><br>
+    Время начала: <input type="time" name="start_time" value="{{ schedule.start_time }}"><br>
+    Время окончания: <input type="time" name="end_time" value="{{ schedule.end_time }}"><br>
+    <button type="submit">Сохранить</button>
+</form>
+<a href="{% url 'view_schedule' %}">Назад</a>

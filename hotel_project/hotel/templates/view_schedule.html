@@ -1,0 +1,14 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h2>Список расписания</h2>
+<ul>
+    {% for schedule in schedules %}
+        <li>
+            Танцор: {{ schedule.dancer.first_name }} {{ schedule.dancer.last_name }},
+            Группа: {{ schedule.group.group_name }},
+            Дата: {{ schedule.session_date }}, Время: {{ schedule.start_time }} - {{ schedule.end_time }}
+            <a href="{% url 'edit_schedule' schedule.id %}">Редактировать</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'home' %}">Назад</a>

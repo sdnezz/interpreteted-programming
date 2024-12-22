@@ -1,0 +1,80 @@
+/* Общий фон */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f0fa; /* Светлый фиолетовый */
+    color: #4c0385; /* Темный фиолетовый */
+}
+
+/* Заголовки */
+h1, h2 {
+    color: #3e006e; /* Насыщенный фиолетовый */
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Формы */
+form {
+    background-color: #ffffff; /* Белый фон */
+    border: 1px solid #d1c4e9; /* Легкий фиолетовый */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+form input, form select, form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #d1c4e9;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+/* Кнопки */
+button {
+    background-color: #7e57c2; /* Фиолетовый */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #5e35b1; /* Темнее при наведении */
+}
+
+/* Ссылки */
+a {
+    color: #7e57c2;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Списки */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f3e5f5;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #d1c4e9;
+}

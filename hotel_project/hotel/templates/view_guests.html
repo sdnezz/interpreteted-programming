@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h2>Список гостей</h2>
+<ul>
+    {% for guest in guests %}
+        <li>
+            <form method="post" action="{% url 'edit_guest' guest.id %}">
+                {% csrf_token %}
+                Имя: <input type="text" name="first_name" value="{{ guest.first_name }}">
+                Фамилия: <input type="text" name="last_name" value="{{ guest.last_name }}">
+                Телефон: <input type="text" name="phone_number" value="{{ guest.phone_number }}">
+                Почта: <input type="email" name="email" value="{{ guest.email }}">
+                Номер паспорта: <input type="text" name="passport_number" value="{{ guest.passport_number }}">
+                <button type="submit">Сохранить</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'home' %}">Назад</a>

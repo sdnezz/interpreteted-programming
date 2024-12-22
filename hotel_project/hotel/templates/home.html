@@ -1,0 +1,10 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h1>Управление отелем</h1>
+<a href="{% url 'add_guest' %}">Добавить гостя</a><br>
+<a href="{% url 'view_guests' %}">Просмотреть гостей</a><br>
+<a href="{% url 'add_room' %}">Добавить номер</a><br>
+<a href="{% url 'view_rooms' %}">Просмотреть номера</a><br>
+<a href="{% url 'add_booking' %}">Добавить бронирование</a><br>
+<a href="{% url 'view_bookings' %}">Просмотреть бронирования</a><br>
+<a href="{% url 'show_tables' %}">Отобразить все таблицы</a>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<osm version="0.6" generator="Overpass API">
+  <node id="1" lat="55.751244" lon="37.618423">
+    <tag k="amenity" v="supermarket"/>
+    <tag k="name" v="Supermarket A"/>
+    <tag k="network" v="Network 1"/>
+  </node>
+  <node id="2" lat="55.752244" lon="37.619423">
+    <tag k="amenity" v="supermarket"/>
+    <tag k="name" v="Supermarket B"/>
+    <tag k="network" v="Network 1"/>
+  </node>
+  <node id="3" lat="55.753244" lon="37.620423">
+    <tag k="amenity" v="supermarket"/>
+    <tag k="name" v="Supermarket C"/>
+    <tag k="network" v="Network 2"/>
+  </node>
+  <node id="4" lat="55.754244" lon="37.621423">
+    <tag k="amenity" v="supermarket"/>
+    <tag k="name" v="Supermarket D"/>
+    <tag k="network" v="Network 1"/>
+  </node>
+  <node id="5" lat="55.755244" lon="37.622423">
+    <tag k="amenity" v="supermarket"/>
+    <tag k="name" v="Supermarket E"/>
+    <tag k="network" v="Network 2"/>
+  </node>
+</osm>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Импорт XML</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Импортировать данные из XML</h1>
+    <form method="post" enctype="multipart/form-data" action="{% url 'import_from_xml' %}">
+        {% csrf_token %}
+        <label for="file">Выберите XML файл:</label>
+        <input type="file" name="file" id="file" required>
+        <button type="submit">Импортировать</button>
+    </form>
+</body>
+</html>

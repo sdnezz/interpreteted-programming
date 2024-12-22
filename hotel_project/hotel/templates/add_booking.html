@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h2>Добавить бронирование</h2>
+<form method="post">
+    {% csrf_token %}
+    Гость:
+    <select name="guest_id">
+        {% for guest in guests %}
+            <option value="{{ guest.id }}">{{ guest.first_name }} {{ guest.last_name }}</option>
+        {% endfor %}
+    </select><br>
+    Номер:
+    <select name="room_id">
+        {% for room in rooms %}
+            <option value="{{ room.id }}">Номер {{ room.room_number }} ({{ room.status }})</option>
+        {% endfor %}
+    </select><br>
+    Дата заезда: <input type="date" name="check_in_date"><br>
+    Дата выезда: <input type="date" name="check_out_date"><br>
+    <button type="submit">Добавить</button>
+</form>
+<a href="{% url 'home' %}">Назад</a>

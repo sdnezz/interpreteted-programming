@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Содержимое таблиц</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Гости</h1>
+    <ul>
+        {% for guest in guests %}
+        <li>{{ guest.first_name }} {{ guest.last_name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Номера</h1>
+    <ul>
+        {% for room in rooms %}
+        <li>Номер: {{ room.room_number }}, Тип: {{ room.room_type }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Бронирования</h1>
+    <ul>
+        {% for booking in bookings %}
+        <li>Гость: {{ booking.guest.first_name }}, Номер: {{ booking.room.room_number }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/export/">Экспортировать в XML</a><br>
+    <a href="/import/">Импортировать из XML</a>
+</body>
+</html>

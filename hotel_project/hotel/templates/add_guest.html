@@ -1,0 +1,18 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<h2>Добавить гостя</h2>
+<form method="post">
+    {% csrf_token %}
+    <label>Имя:</label><br>
+    <input type="text" name="first_name" required><br>
+    <label>Фамилия:</label><br>
+    <input type="text" name="last_name" required><br>
+    <label>Телефон:</label><br>
+    <input type="text" name="phone_number"><br>
+    <label>Email:</label><br>
+    <input type="email" name="email"><br>
+    <label>Номер паспорта:</label><br>
+    <input type="text" name="passport_number" required><br><br>
+    <button type="submit">Добавить</button>
+</form>
+<a href="{% url 'home' %}">Назад</a>
